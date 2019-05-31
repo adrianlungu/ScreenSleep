@@ -1,0 +1,35 @@
+﻿<Window x:Class="ScreenSleep.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScreenSleep"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ShowInTaskbar="False"
+        ShowActivated="False"
+        Icon="Resources/icon.ico"
+        Title="MainWindow" Height="0" Width="0"
+        Loaded="MainWindow_OnLoaded">
+
+    <Window.Resources>
+        <ContextMenu x:Key="TrayMenu" >
+            <MenuItem Header="Turn Off Screen" Click="TurnOff_OnClick"></MenuItem>
+            <MenuItem Header="Settings" Click="Settings_OnClick"></MenuItem>
+            <Separator/>
+            <MenuItem Header="Exit" Click="Exit_OnClick"></MenuItem>
+        </ContextMenu>
+    </Window.Resources>
+
+    <tb:TaskbarIcon x:Name="MyNotifyIcon"
+                    Visibility="Visible"
+                    ToolTipText="ScreenSleep"
+
+                    MenuActivation="All"
+                    
+                    IconSource="/Resources/icon.ico"
+                    ContextMenu="{StaticResource TrayMenu}"
+    />
+
+</Window>

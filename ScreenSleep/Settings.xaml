@@ -1,0 +1,29 @@
+﻿<Window x:Class="ScreenSleep.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Icon="Resources/icon.ico"
+        WindowStyle="ToolWindow"
+        Title="ScreenSleep  Settings" 
+        SizeToContent="WidthAndHeight">
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="16" MinWidth="250">
+
+            <StackPanel.Resources>
+                <Style x:Key="BottomMarginStyle" TargetType="{x:Type FrameworkElement}">
+                    <Setter Property="Margin" Value="0,0,0,8"/>
+                </Style>
+                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BottomMarginStyle}"></Style>
+                <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BottomMarginStyle}"></Style>
+            </StackPanel.Resources>
+
+            <TextBlock>Turn Off Screen SleepShortcut</TextBlock>
+            <TextBox Name="ShortcutTextBox" PreviewKeyDown="ShortcutTextBox_PreviewKeyDown"  Height="26"></TextBox>
+            <Separator Margin="0,0,0,5"></Separator>
+            <CheckBox Name="RunCheckbox" Unchecked="RunCheckbox_OnChecked" Checked="RunCheckbox_OnChecked">Run ScreenSleep At Startup</CheckBox>
+
+        </StackPanel>
+    </Grid>
+</Window>
