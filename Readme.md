@@ -1,4 +1,5 @@
-﻿# ScreenSleep
+﻿![](./Images/icon-black.png)
+# ScreenSleep 
 
 **ScreenSleep** is a **Windows** application that helps you **put your screens to rest**. 
 
