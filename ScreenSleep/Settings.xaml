@@ -21,7 +21,18 @@
 
             <TextBlock>Turn Off Screen SleepShortcut</TextBlock>
             <TextBox Name="ShortcutTextBox" PreviewKeyDown="ShortcutTextBox_PreviewKeyDown"  Height="26"></TextBox>
-            <Separator Margin="0,0,0,5"></Separator>
+
+            <TextBlock>Turn Off Timer</TextBlock>
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox DockPanel.Dock="Left" Name="TimerTextBox" PreviewKeyDown="TimerTextBox_PreviewKeyDown"  Height="26" Margin="0,0,10,0" PreviewTextInput="TimerTextBox_PreviewTextInput"></TextBox>
+                <TextBlock Grid.Column="1" DockPanel.Dock="Right" TextAlignment="Left" Margin="0,4,0,0">seconds</TextBlock>
+            </Grid>
+            
+            <Separator Margin="0,10,0,10"></Separator>
             <CheckBox Name="RunCheckbox" Unchecked="RunCheckbox_OnChecked" Checked="RunCheckbox_OnChecked">Run ScreenSleep At Startup</CheckBox>
 
         </StackPanel>

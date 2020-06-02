@@ -30,6 +30,7 @@ namespace ScreenSleep
             _helper = ((MainWindow) Application.Current.MainWindow).Helper;
 
             ShortcutTextBox.Text = Properties.Settings.Default.SleepShortcut;
+            TimerTextBox.Text = Properties.Settings.Default.SleepTimer.ToString();
             RunCheckbox.IsChecked = Properties.Settings.Default.RunOnStartup;
         }
 
@@ -138,6 +139,28 @@ namespace ScreenSleep
 
             Properties.Settings.Default.Save();
             SetupStartup();
+        }
+
+        private void TimerTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            var timerText = TimerTextBox.Text;
+            int timer;
+
+            var isNumeric = int.TryParse(timerText, out timer);
+
+            if (!isNumeric) {
+                Properties.Settings.Default.SleepTimer = 1;        
+            } else {
+                Properties.Settings.Default.SleepTimer = timer;
+            }
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void TimerTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            var isNumeric = int.TryParse(e.Text, out _);
+            e.Handled = isNumeric;
         }
     }
 }

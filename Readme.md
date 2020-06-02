@@ -19,7 +19,7 @@ You can also use a **keyboard shortcut** to put your screens to sleep. Configure
 
 Find the latest release [here](https://github.com/AdrianLungu/ScreenSleep/releases).
 
-Or just download version 1.0.0 from [here](https://github.com/AdrianLungu/ScreenSleep/releases/download/v1.0.0/ScreenSleep-1.0.0.7z).
+Or just download version 1.0.1 from [here](https://github.com/AdrianLungu/ScreenSleep/releases/download/v1.0.1/ScreenSleep-1.0.1.7z).
 
 Just decompress it to your favourite folder and run it as is!
 

@@ -8,5 +8,8 @@
     <Setting Name="SleepShortcut" Type="System.String" Scope="User">
       <Value Profile="(Default)">Ctrl+Shift+M</Value>
     </Setting>
+    <Setting Name="SleepTimer" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
