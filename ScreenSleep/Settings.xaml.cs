@@ -141,26 +141,24 @@ namespace ScreenSleep
             SetupStartup();
         }
 
-        private void TimerTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void TimerTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            var timerText = TimerTextBox.Text;
             int timer;
 
-            var isNumeric = int.TryParse(timerText, out timer);
+            var isNumeric = int.TryParse(e.Text, out timer);
 
-            if (!isNumeric) {
-                Properties.Settings.Default.SleepTimer = 1;        
-            } else {
+            if (!isNumeric)
+            {
+                Properties.Settings.Default.SleepTimer = 1;
+            }
+            else
+            {
                 Properties.Settings.Default.SleepTimer = timer;
             }
 
             Properties.Settings.Default.Save();
-        }
 
-        private void TimerTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            var isNumeric = int.TryParse(e.Text, out _);
-            e.Handled = isNumeric;
+            e.Handled = !isNumeric;
         }
     }
 }

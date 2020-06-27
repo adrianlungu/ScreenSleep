@@ -28,7 +28,7 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="50"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <TextBox DockPanel.Dock="Left" Name="TimerTextBox" PreviewKeyDown="TimerTextBox_PreviewKeyDown"  Height="26" Margin="0,0,10,0" PreviewTextInput="TimerTextBox_PreviewTextInput"></TextBox>
+                <TextBox DockPanel.Dock="Left" Name="TimerTextBox" Height="26" Margin="0,0,10,0" PreviewTextInput="TimerTextBox_PreviewTextInput"></TextBox>
                 <TextBlock Grid.Column="1" DockPanel.Dock="Right" TextAlignment="Left" Margin="0,4,0,0">seconds</TextBlock>
             </Grid>
             
