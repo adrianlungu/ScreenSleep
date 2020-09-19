@@ -7,10 +7,11 @@
         xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
         WindowStyle="None"
+        WindowState="Minimized"
         ShowInTaskbar="False"
         ShowActivated="False"
-        Icon="Resources/icon.ico"
-        Title="MainWindow" Height="0" Width="0"
+        Visibility="Hidden"
+        Title="MainWindow" Height="1" Width="1"
         Loaded="MainWindow_OnLoaded">
 
     <Window.Resources>

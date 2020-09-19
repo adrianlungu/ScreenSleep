@@ -41,6 +41,8 @@ namespace ScreenSleep
 
         private void TurnOff_OnClick(object sender, RoutedEventArgs e)
         {
+            if (MyNotifyIcon.ContextMenu != null) MyNotifyIcon.ContextMenu.IsOpen = false;
+
             Screen.SetScreenState(ScreenState.Off);
         }
 

@@ -7,5 +7,6 @@ namespace ScreenSleep
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
