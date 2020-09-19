@@ -11,7 +11,12 @@ The application **runs** quietly **in the background** and you can either put yo
 
 ---
 
-You can also use a **keyboard shortcut** to put your screens to sleep. Configure it from **Settings**:
+You can also configure the following:
+
+- **keyboard shortcut** to put your screens to sleep
+- **delay** after pressing the shortcut till the screen goes to sleep
+
+Configure them from **Settings**:
 
 ![](./Images/settings.png)
 
@@ -19,9 +24,9 @@ You can also use a **keyboard shortcut** to put your screens to sleep. Configure
 
 Find the latest release [here](https://github.com/AdrianLungu/ScreenSleep/releases).
 
-Or just download version 1.0.1 from [here](https://github.com/AdrianLungu/ScreenSleep/releases/download/v1.0.1/ScreenSleep-1.0.1.7z).
+Or just download version 1.0.3 from [here](https://github.com/adrianlungu/ScreenSleep/releases/download/v1.0.3/ScreenSleep-1.0.3.7z).
 
-Just decompress it to your favourite folder and run it as is!
+Just decompress it to your favorite folder and run it as is!
 
 ## Getting Help
 
