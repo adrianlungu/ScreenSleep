@@ -24,7 +24,7 @@ Configure them from **Settings**:
 
 Find the latest release [here](https://github.com/AdrianLungu/ScreenSleep/releases).
 
-Or just download version 1.0.3 from [here](https://github.com/adrianlungu/ScreenSleep/releases/download/v1.0.3/ScreenSleep-1.0.3.7z).
+Or just download version 1.0.4 from [here](https://github.com/adrianlungu/ScreenSleep/releases/download/1.0.4/ScreenSleep-1.0.4.7z).
 
 Just decompress it to your favorite folder and run it as is!
 
