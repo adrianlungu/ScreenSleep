@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
@@ -10,6 +11,14 @@ namespace ScreenSleep
     /// </summary>
     public partial class MainWindow : Window
     {
+        [DllImport("user32.dll")]
+        static extern IntPtr SetParent(IntPtr hwnd, IntPtr hwndNewParent);
+
+        // https://stackoverflow.com/questions/1399037/loading-a-wpf-window-without-showing-it
+        private const int HWND_MESSAGE = -3;
+        private IntPtr hwnd;
+        private IntPtr oldParent;
+
         public WindowInteropHelper Helper;
 
         public MainWindow()
@@ -21,9 +30,17 @@ namespace ScreenSleep
             Settings.SetupStartup();
 
             Helper = new WindowInteropHelper(this);
+            Helper.EnsureHandle();
 
-            var source = PresentationSource.FromVisual(this) as HwndSource;
-            source.AddHook(WndProc);
+            if (PresentationSource.FromVisual(this) is HwndSource source)
+            {
+                source.AddHook(WndProc);
+
+                hwnd = source.Handle;
+                oldParent = SetParent(hwnd, (IntPtr) HWND_MESSAGE);
+                Visibility = Visibility.Hidden;
+                ShowActivated = false;
+            }
 
             Settings.SetupSleepShortcut(Helper);
         }
@@ -41,7 +58,10 @@ namespace ScreenSleep
 
         private void TurnOff_OnClick(object sender, RoutedEventArgs e)
         {
-            if (MyNotifyIcon.ContextMenu != null) MyNotifyIcon.ContextMenu.IsOpen = false;
+            this.Dispatcher.Invoke(() =>
+            {
+                if (MyNotifyIcon.ContextMenu != null) MyNotifyIcon.ContextMenu.IsOpen = false;
+            });
 
             Screen.SetScreenState(ScreenState.Off);
         }
