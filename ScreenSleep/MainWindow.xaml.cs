@@ -70,6 +70,8 @@ namespace ScreenSleep
         {
             if (msg == 0x0312 && wParam.ToInt32() == Settings.HotkeyId)
             {
+
+
                 Task.Delay(1000 * Properties.Settings.Default.SleepTimer).ContinueWith(t => TurnOff_OnClick(null, null));
             }
 

@@ -65,8 +65,13 @@ namespace ScreenSleep
         {
             var shortcut = Properties.Settings.Default.SleepShortcut.ToLower();
 
-            string keyString = shortcut.Substring(shortcut.Length - 1);
+            string keyString = shortcut;
             var modifiers = 0;
+
+            if (shortcut.Contains("+"))
+            {
+                keyString = shortcut.Substring(shortcut.Length - 1);
+            }
 
             if (shortcut.Contains("alt"))
             {
